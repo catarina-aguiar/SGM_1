@@ -1,9 +1,9 @@
 # === MAKEFILE ===
 
 #  === PHONY & ALL ===
-.PHONY: all download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarise clean
+.PHONY: all download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarize clean
 
-all: download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarise
+all: download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarize
 
 # === TARGETS ===
 
@@ -18,19 +18,19 @@ qc:
 	bash scripts/qc.sh
 
 # Assembly Illumina
-assemble_illumina:
-	@echo "ILLUMINA"
-	bash scripts/assemble_illumina.sh
+# assemble_illumina:
+# 	@echo "ILLUMINA"
+# 	bash scripts/assemble_illumina.sh
 
 # Assembly Nanopore
 assemble_nanopore:
 	@echo "NANOPORE"
 	bash scripts/assemble_nanopore.sh
 
-# Assemble Hybrid
-assemble_hybrid:
-	@echo "HYBRID"
-	bash scripts/assemble_hybrid.sh
+# # Assemble Hybrid
+# assemble_hybrid:
+# 	@echo "HYBRID"
+# 	bash scripts/assemble_hybrid.sh
 
 # Avaliação (QUAST + BUSCO)
 evaluate:
@@ -43,9 +43,9 @@ annotate:
 	bash scripts/annotate.sh
 
 # Geração do sumário
-summarise:
-	@echo "SUMMARISE_TESTE"
-	bash scripts/summarise.sh
+summarize:
+	@echo "SUMMARIZE_TESTE"
+	bash scripts/summarize.sh
 
 # Limpa o projeto
 clean:
