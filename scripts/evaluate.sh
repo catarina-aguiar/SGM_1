@@ -12,13 +12,19 @@ quast results/nanopore_assembly/assembly.fasta \
 quast results/hybrid_assembly/assembly.fasta \
       -o results/evaluation/quast_hybrid
 
+rm -rf illumina_busco
+
 busco -i results/illumina_assembly/contigs.fasta \
       -l bacteria_odb10 -m genome \
       -o illumina_busco
 
+rm -rf nanopore_busco
+
 busco -i results/nanopore_assembly/assembly.fasta \
       -l bacteria_odb10 -m genome \
       -o nanopore_busco
+
+rm -rf hybrid_busco
 
 busco -i results/hybrid_assembly/assembly.fasta \
       -l bacteria_odb10 -m genome \

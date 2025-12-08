@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # === SCRIPT PARA CORRER PROJETO ===
 
-set -e # Aborta em situação de erro
+set -e # Aborta em caso de erro
 # set -x # Debugging
 
 # === CRIAÇÃO CONDA ===
@@ -38,4 +38,4 @@ echo "=== MAKEFILE ==="
 
 echo "A executar Makefile..."
 make all
-echo "Pipeline concluído com sucesso!"
+echo "Pipeline concluída com sucesso!"
