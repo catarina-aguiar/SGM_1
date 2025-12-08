@@ -16,7 +16,7 @@ echo "A criar o ambiente Conda '$NOME_AMBIENTE'..."
 # Ativa funções do conda no shell
 source "$(conda info --base)/etc/profile.d/conda.sh"
 
-# environment.yml TESTE
+# Cria ambiente com base nas dependências e versões em environment.yml
 if conda env list | awk '{print $1}' | grep -qx "$NOME_AMBIENTE"; then
     echo "Ambiente '$NOME_AMBIENTE' já existente. A reutilizar..."
 else

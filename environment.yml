@@ -3,10 +3,11 @@ name: SGM_proj1
 channels:
   - conda-forge
   - bioconda
+  - defaults
 
 dependencies:
   # Base
-  - python=3.11
+  - python=3.9
 
   # Quality Control
   - fastqc=0.12.1
@@ -31,4 +32,3 @@ dependencies:
   - gawk
   - sed
   - sra-tools
-

@@ -1,10 +1,11 @@
-# TESTE
-# --- PHONY & ALL---
+# === MAKEFILE ===
+
+#  === PHONY & ALL ===
 .PHONY: all download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarise clean
 
 all: download qc assemble_illumina assemble_nanopore assemble_hybrid evaluate annotate summarise
 
-# --- TARGETS ---
+# === TARGETS ===
 
 # Download dos dados brutos
 download:

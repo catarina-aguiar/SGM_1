@@ -1,36 +1,41 @@
 #!/usr/bin/env bash
 set -e
 
-echo "=============================================="
-echo "  DOWNLOAD DOS DADOS DO PROJECTO SGM"
-echo "=============================================="
+mkdir -p data/illumina data/nanopore
 
-mkdir -p data/illumina
-mkdir -p data/nanopore
-mkdir -p data/reference
+# O URL base do FTP do ENA para ficheiros FASTQ
+ENA_FTP_BASE="ftp.sra.ebi.ac.uk/vol1/fastq"
 
-echo ""
-echo "[1/4] A descarregar dados Illumina (ERX2780812)..."
-fasterq-dump ERX2780812 -O data/illumina
-gzip data/illumina/*.fastq
+# === CONSTRUÇÃO URL ===
+ACCESSION_ILLUMINA="ERR2767971"
+ACCESSION_NANOPORE="ERR4352271"
 
-echo ""
-echo "[2/4] A descarregar dados Nanopore (ERX4296810)..."
-fasterq-dump ERX4296810 -O data/nanopore
-gzip data/nanopore/*.fastq
+PREFIXO1_ILLUMINA="${ACCESSION_ILLUMINA:0:3}"
+PREFIXO2_ILLUMINA="${ACCESSION_ILLUMINA:3:3}"
 
-echo ""
-echo "[3/4] A descarregar genoma de referência (GCA_903989475)..."
-wget -O data/reference/reference.fna.gz \
-    "https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/903/989/475/GCA_903989475.1_CPBF_427v1/GCA_903989475.1_CPBF_427v1_genomic.fna.gz"
+PREFIXO1_NANOPORE="${ACCESSION_NANOPORE:0:3}"
+PREFIXO2_NANOPORE="${ACCESSION_NANOPORE:3:3}"
 
-gunzip -f data/reference/reference.fna.gz
+# ILLUMINA
+URL_IL_R1="ftp://${ENA_FTP_BASE}/${PREFIXO1_ILLUMINA}/${PREFIXO2_ILLUMINA}/${ACCESSION_ILLUMINA}/${ACCESSION_ILLUMINA}_1.fastq.gz"
+URL_IL_R2="ftp://${ENA_FTP_BASE}/${PREFIXO1_ILLUMINA}/${PREFIXO2_ILLUMINA}/${ACCESSION_ILLUMINA}/${ACCESSION_ILLUMINA}_2.fastq.gz"
 
-echo ""
-echo "----------------------------------------------"
-echo "   DOWNLOAD CONCLUÍDO COM SUCESSO!"
-echo "   Dados guardados em:"
-echo "   - data/illumina/"
-echo "   - data/nanopore/"
-echo "   - data/reference/"
-echo "----------------------------------------------"
+# NANOPORE
+URL_NANO_R1="ftp://${ENA_FTP_BASE}/${PREFIXO1_NANOPORE}/${PREFIXO2_NANOPORE}/${ACCESSION_NANOPORE}/${ACCESSION_NANOPORE}_1.fastq.gz"
+
+# === Download Illumina ===
+echo "A descarregar dados Illumina $ACCESSION_ILLUMINA ..."
+echo "A guardar em: data/illumina"
+
+wget -P data/illumina "$URL_IL_R1"
+wget -P data/illumina "$URL_IL_R2"
+
+echo "Download de $ACCESSION_ILLUMINA concluído."
+
+# Download Nanopore
+echo "A descarregar dados Nanopore $ACCESSION_NANOPORE ..."
+echo "A guardar em: data/Nanopore"
+
+wget -P data/nanopore "$URL_NANO_R1"
+
+echo "Download de $ACCESSION_NANOPORE concluído."
