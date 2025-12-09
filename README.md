@@ -56,7 +56,7 @@ dependencies:
 
   Quality Control
   - fastqc=0.12.1
-  - multiqc=1.15 ## ver multiqc?
+  - multiqc=1.15
 
   Assembly
   - spades=3.15.5
