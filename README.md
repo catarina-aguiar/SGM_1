@@ -26,7 +26,7 @@ SGM_1/
 │   └── summarize.sh
 │
 ├── results/
-│   ├── evaluations/
+│   ├── evaluation/
 │   │   ├── qc/
 │   │   ├── illumina_assembly/
 │   │   ├── nanopore_assembly/
@@ -50,26 +50,26 @@ channels:
   - defaults
 
 dependencies:
-  # Base
+  Base
   - python=3.9
 
-  # Quality Control
+  Quality Control
   - fastqc=0.12.1
   - multiqc=1.15 ## ver multiqc?
 
-  # Assembly
+  Assembly
   - spades=3.15.5
   - flye=2.9.3
   - unicycler=0.5.0
 
-  # Assembly evaluation
+  Assembly evaluation
   - quast=5.2.0
   - busco=5.6.1
 
-  # Annotation
+  Annotation
   - prokka=1.14.6
 
-  # Utilities
+  Utilities
   - bash
   - coreutils
   - grep
