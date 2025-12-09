@@ -4,9 +4,8 @@ Este trabalho prático foca-se na reconstrução e na anotação do genoma da ba
 Membros do Grupo (Grupo_I)
  - Catarina Aguiar (202205932)
  - Filipa Marinha (202304935)
-⸻
 
-1. Estrutura Geral do Projecto
+## 1. Estrutura Geral do Projecto
 
 A estrutura do repositório está organizada da seguinte forma:
 
@@ -41,9 +40,7 @@ SGM_1/
 ├── README.md
 └── environment.yml
 
-⸻
-
-2. Ferramentas Utilizadas (com versões)
+## 2. Ferramentas Utilizadas (com versões)
 
 As ferramentas utilizadas no pipeline encontram-se definidas no ficheiro environment.yml. As principais ferramentas e respetivas versões são:
 
@@ -80,14 +77,9 @@ dependencies:
   - sed
   - sra-tools
 
-
-⸻
-
-3. Execução Completa
+## 3. Execução Completa
 Toda a análise pode ser reproduzida de forma automática executando:
 
 git clone <repo>
 cd <pasta>
 bash scrips/go.sh
-
-
