@@ -84,5 +84,5 @@ Toda a análise pode ser reproduzida de forma automática executando:
 ```
 git clone <repo>
 cd <pasta>
-`bash scrips/go.sh
+bash scrips/go.sh
 ```
