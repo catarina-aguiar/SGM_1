@@ -9,6 +9,8 @@ Membros do Grupo (Grupo_I)
 
 A estrutura do repositório está organizada da seguinte forma:
 
+
+```
 SGM_1/
 │
 ├── data/
@@ -34,11 +36,10 @@ SGM_1/
 │   │
 │   └── (outros resultados gerados automaticamente)
 │
-├── analysis/
-│
 ├── Makefile
 ├── README.md
 └── environment.yml
+```
 
 ## 2. Ferramentas Utilizadas (com versões)
 
@@ -80,6 +81,8 @@ dependencies:
 ## 3. Execução Completa
 Toda a análise pode ser reproduzida de forma automática executando:
 
+```
 git clone <repo>
 cd <pasta>
-bash scrips/go.sh
+`bash scrips/go.sh
+```
