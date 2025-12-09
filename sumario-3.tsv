@@ -1,0 +1,7 @@
+Parâmetro	Illumina-only	Nanopore-only	Hybrid	Referencia Publicada
+Tamanho_Genoma_bp	5426327	5227028	5228535	5228174
+Num_Contigs	967	1	14	1
+N50_bp	154892	5227028	4939407	5228174
+GC_percent	65.16	65.37	65.38	65.38
+BUSCO_Completo_percent	100.0	80.6	100.0	99.8
+Num_CDSs	4364	5090	4378	4367
